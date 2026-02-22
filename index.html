@@ -509,7 +509,41 @@
     </div>
 
     <div class="project-card">
-      <h3>2. Python Data Analysis Dashboard <span class="badge">Upcoming</span></h3>
+           <h3>2. The Resilience Map: Kenya Poverty Vulnerability Analysis</h3>
+      <p class="stack">Stack: Python · Pandas · Matplotlib · Google Colab · HXL Standard</p>
+      <p>
+        A structured socio-economic analysis prepared for the ASAL Region Agricultural Initiative,
+        guiding the 2025/2026 strategic budget allocation for Arid and Semi-Arid Lands in Kenya.
+        The analysis ingests humanitarian data following the HXL standard, applies automated
+        validation logic, and maps vulnerability trends against a 45% NGO intervention threshold
+        to identify high-risk regions requiring agricultural subsidies.
+      </p>
+
+      <div class="arch-wrap" id="archWrap2">
+        <img
+          src="assets/vulnerability_trend_kenya.png"
+          alt="Vulnerability trend chart"
+          id="archThumb2"
+          onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'arch-placeholder\'>[ vulnerability_trend_kenya.png ]<br><small>Place image in assets/ folder</small></div>'"
+        />
+      </div>
+      <p class="diagram-caption">Figure 1: Vulnerability trend from 2000 to 2022 against the 45% NGO intervention threshold.</p>
+
+      <p class="impact-title">Key Findings</p>
+      <ul class="impact-list">
+        <li><strong>Threshold Violations:</strong> Several years exceeded the 45% critical intervention threshold, indicating periods where local resources were insufficient.</li>
+        <li><strong>Trend Analysis:</strong> A visible downward trend from peaks above 60% in 2000, with 2022 still showing approximately 40.5% of the population in high-risk conditions.</li>
+        <li><strong>Risk Mapping:</strong> Automated flagging isolated specific temporal data points requiring immediate agricultural subsidies or social protection measures.</li>
+      </ul>
+
+      <div class="card-links">
+        <a class="btn" href="https://github.com/georgixxx/kenya-poverty-resilience-map" target="_blank">View GitHub Repo</a>
+        <a class="link" href="https://github.com/georgixxx/kenya-poverty-resilience-map/blob/main/README.md" target="_blank">Full Technical Report</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <h3>3. Python Data Analysis Dashboard <span class="badge">Upcoming</span></h3>
       <p class="stack">Stack: Python · Pandas · Matplotlib</p>
       <p>
         Utilising Pandas and Matplotlib to transform validated logs into actionable KPI dashboards
@@ -537,7 +571,7 @@
 
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   const lightbox      = document.getElementById('lightbox');
   const lightboxImg   = document.getElementById('lightboxImg');
   const lightboxClose = document.getElementById('lightboxClose');
@@ -578,9 +612,18 @@
     lightboxImg.style.transform = `scale(${scale})`;
   }, { passive: false });
 
-  archWrap.addEventListener('wheel', (e) => {
+  const archWrap2     = document.getElementById('archWrap2');
+
+  archWrap2.addEventListener('click', () => {
+    scale = 1;
+    lightboxImg.src = 'assets/vulnerability_trend_kenya.png';
+    lightboxImg.style.transform = 'scale(1)';
+    lightbox.classList.add('active');
+  });
+
+  archWrap2.addEventListener('wheel', (e) => {
     e.preventDefault();
-    const img = document.getElementById('archThumb');
+    const img = document.getElementById('archThumb2');
     if (!img) return;
     let current = parseFloat(img.dataset.scale || 1);
     const delta = e.deltaY > 0 ? -0.1 : 0.1;
@@ -588,7 +631,8 @@
     img.dataset.scale = current;
     img.style.transform = `scale(${current})`;
   }, { passive: false });
-</script>
-
-</body>
-</html>
+    e.preventDefault();
+    const img = document.getElementById('archThumb');
+    if (!img) return;
+    let current = parseFloat(img.dataset.scale || 1);
+    const delta = e.deltaY > 0 ?
