@@ -1,0 +1,6 @@
+defaults:
+  - scope:
+      path: "" # This means "all files in the project"
+      type: "pages"
+    values:
+      layout: "default"
