@@ -180,6 +180,7 @@
       margin-bottom: 14px;
     }
 
+    /* ARCHITECTURE DIAGRAM */
     .arch-wrap {
       margin: 18px 0 6px;
       border-radius: 8px;
@@ -190,9 +191,30 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      cursor: zoom-in;
+      position: relative;
     }
 
-    .arch-wrap img { width: 100%; display: block; }
+    .arch-wrap img {
+      width: 100%;
+      display: block;
+      transition: transform 0.1s ease;
+      transform-origin: center center;
+    }
+
+    .arch-wrap:hover::after {
+      content: "Click to enlarge  |  Scroll to zoom";
+      position: absolute;
+      bottom: 10px;
+      right: 12px;
+      background: rgba(0,43,92,0.75);
+      color: #fff;
+      font-size: 0.72em;
+      font-family: 'IBM Plex Mono', monospace;
+      padding: 4px 10px;
+      border-radius: 4px;
+      pointer-events: none;
+    }
 
     .arch-placeholder {
       font-family: 'IBM Plex Mono', monospace;
@@ -209,6 +231,67 @@
       color: #999;
       text-align: center;
       margin-bottom: 18px;
+    }
+
+    /* LIGHTBOX */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.88);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      cursor: zoom-out;
+    }
+
+    .lightbox.active { display: flex; }
+
+    .lightbox-inner {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 6px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+      transform-origin: center center;
+      transition: transform 0.05s ease;
+      cursor: default;
+      user-select: none;
+    }
+
+    .lightbox-close {
+      position: fixed;
+      top: 20px;
+      right: 28px;
+      color: #fff;
+      font-size: 2em;
+      cursor: pointer;
+      line-height: 1;
+      z-index: 1001;
+      opacity: 0.8;
+      font-family: sans-serif;
+    }
+
+    .lightbox-close:hover { opacity: 1; }
+
+    .lightbox-hint {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(255,255,255,0.6);
+      font-size: 0.8em;
+      font-family: 'IBM Plex Mono', monospace;
+      pointer-events: none;
     }
 
     .impact-title {
@@ -307,6 +390,15 @@
 </head>
 <body>
 
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close" id="lightboxClose">&times;</span>
+  <div class="lightbox-inner">
+    <img src="assets/architecture diagram.png" alt="Architecture diagram enlarged" id="lightboxImg"/>
+  </div>
+  <div class="lightbox-hint">Scroll to zoom in and out &nbsp;|&nbsp; Click outside image or press Esc to close</div>
+</div>
+
 <div class="layout">
 
   <!-- LEFT COLUMN -->
@@ -390,10 +482,12 @@
         JSON Schema before routing to the appropriate downstream path.
       </p>
 
-      <div class="arch-wrap">
+      <!-- Clickable + zoomable diagram -->
+      <div class="arch-wrap" id="archWrap">
         <img
           src="assets/architecture diagram.png"
           alt="System architecture diagram"
+          id="archThumb"
           onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'arch-placeholder\'>[ architecture diagram.png ]<br><small>Place image in assets/ folder</small></div>'"
         />
       </div>
@@ -440,5 +534,65 @@
   </main>
 
 </div>
+
+<script>
+  const lightbox     = document.getElementById('lightbox');
+  const lightboxImg  = document.getElementById('lightboxImg');
+  const lightboxClose= document.getElementById('lightboxClose');
+  const archWrap     = document.getElementById('archWrap');
+
+  let scale = 1;
+  const MIN_SCALE = 0.5;
+  const MAX_SCALE = 5;
+
+  // Open lightbox on diagram click
+  archWrap.addEventListener('click', () => {
+    scale = 1;
+    lightboxImg.style.transform = 'scale(1)';
+    lightbox.classList.add('active');
+  });
+
+  // Close on X button
+  lightboxClose.addEventListener('click', closeLightbox);
+
+  // Close on click outside the image
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox || e.target === lightbox.querySelector('.lightbox-inner')) {
+      closeLightbox();
+    }
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLightbox();
+  });
+
+  function closeLightbox() {
+    lightbox.classList.remove('active');
+    scale = 1;
+    lightboxImg.style.transform = 'scale(1)';
+  }
+
+  // Mouse wheel zoom inside lightbox
+  lightbox.addEventListener('wheel', (e) => {
+    e.preventDefault();
+    const delta = e.deltaY > 0 ? -0.15 : 0.15;
+    scale = Math.min(MAX_SCALE, Math.max(MIN_SCALE, scale + delta));
+    lightboxImg.style.transform = `scale(${scale})`;
+  }, { passive: false });
+
+  // Mouse wheel zoom on the thumbnail in the page
+  archWrap.addEventListener('wheel', (e) => {
+    e.preventDefault();
+    const img = document.getElementById('archThumb');
+    if (!img) return;
+    let current = parseFloat(img.dataset.scale || 1);
+    const delta = e.deltaY > 0 ? -0.1 : 0.1;
+    current = Math.min(3, Math.max(0.5, current + delta));
+    img.dataset.scale = current;
+    img.style.transform = `scale(${current})`;
+  }, { passive: false });
+</script>
+
 </body>
 </html>
