@@ -1,7 +1,0 @@
-theme: jekyll-theme-minimal
-remote_theme: pages-themes/minimal@v0.2.0
-title: Brightone Onyango
-description: Data Automation Specialist & Technical Writer
-
-# This prevents the theme from adding extra elements that clutter your custom design
-show_downloads: false
