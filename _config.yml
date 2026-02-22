@@ -1,3 +1,6 @@
-remote_theme: pages-themes/minimal@v0.2.0
-title: Brightone Onyango Portfolio
+theme: jekyll-theme-minimal
+title: Brightone Onyango
 description: Data Automation Specialist & Technical Writer
+remote_theme: pages-themes/minimal@v0.2.0
+google_analytics: # Add your ID here if you have one
+show_downloads: false
