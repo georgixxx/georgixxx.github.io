@@ -1,5 +1,5 @@
 <style>
-  /* ── LAYOUT ── */
+  /* ── MAIN LAYOUT ── */
   .portfolio-wrapper {
     display: flex;
     height: 100vh;
@@ -8,37 +8,38 @@
     color: #1a1a2e;
   }
 
-  /* ── LEFT SIDEBAR (FIXED) ── */
-  .sidebar-fixed {
+  /* ── LEFT SIDEBAR ── */
+  .sidebar {
     flex: 0 0 350px;
-    background-color: #f5f7fa;
-    border-right: 1px solid #dde3ec;
+    background-color: #f8fafc;
+    border-right: 1px solid #e2e8f0;
     display: flex;
     flex-direction: column;
     height: 100vh;
   }
 
-  /* Fixed Top Part of Sidebar */
-  .sidebar-top {
-    padding: 40px 30px 20px;
+  /* Fixed Profile Section */
+  .sidebar-fixed-top {
+    padding: 40px 20px 20px;
     text-align: center;
+    background-color: #f8fafc;
     border-bottom: 2px solid #004a99;
   }
 
-  .name-line {
+  .name-header {
     font-family: 'Playfair Display', serif;
     font-size: 1.8em;
     color: #002b5c;
-    margin-bottom: 20px;
-    white-space: nowrap;
+    margin-bottom: 15px;
+    white-space: nowrap; /* Forces name on one line */
   }
 
   .profile-circle {
-    width: 180px;
-    height: 180px;
+    width: 170px;
+    height: 170px;
     border-radius: 50%;
     border: 4px solid #004a99;
-    margin: 0 auto 20px;
+    margin: 0 auto 15px;
     overflow: hidden;
   }
 
@@ -51,152 +52,172 @@
   .centered-title {
     font-weight: 600;
     color: #004a99;
-    font-size: 1em;
-    text-align: center;
-    margin-bottom: 10px;
+    font-size: 0.95em;
+    text-align: center; /* Centered as requested */
+    margin: 0 auto 20px;
+    max-width: 250px;
+    line-height: 1.4;
   }
 
-  /* Scrollable Bottom Part of Sidebar */
-  .sidebar-scrollable {
+  /* Scrollable Info Section */
+  .sidebar-scrollable-bottom {
     flex: 1;
     overflow-y: auto;
     padding: 20px 30px;
   }
 
-  .sidebar-section h3 {
+  .section-title {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.75em;
     text-transform: uppercase;
-    color: #556070;
-    border-bottom: 1px solid #dde3ec;
+    color: #64748b;
+    border-bottom: 1px solid #cbd5e1;
     padding-bottom: 5px;
-    margin-bottom: 12px;
+    margin-bottom: 15px;
   }
 
-  /* ── RIGHT MAIN CONTENT (SCROLLABLE) ── */
-  .main-scrollable {
+  /* ── RIGHT CONTENT (SCROLLABLE) ── */
+  .main-content {
     flex: 1;
     overflow-y: auto;
-    padding: 60px 80px;
-    background: white;
+    padding: 60px 5%;
+    background: #ffffff;
+  }
+
+  .portfolio-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em;
+    color: #002b5c;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 15px;
   }
 
   .project-card {
     background: #ffffff;
-    padding: 40px;
+    padding: 30px;
     border-radius: 8px;
     border-left: 6px solid #004a99;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    margin-bottom: 50px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    margin-bottom: 40px;
   }
 
-  .arch-link {
-    display: block;
-    margin: 25px 0;
+  .tech-stack {
+    font-family: 'IBM Plex Mono', monospace;
+    color: #004a99;
+    font-size: 0.85em;
+    margin-bottom: 15px;
+  }
+
+  .arch-diagram {
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid #e2e8f0;
+    margin: 20px 0;
     cursor: zoom-in;
-    transition: transform 0.2s ease;
   }
 
-  .arch-link:hover { transform: scale(1.01); }
-
-  .btn-github {
-    background: #24292e;
-    color: white !important;
-    padding: 12px 24px;
-    border-radius: 5px;
+  .btn {
+    background: #1a1a2e;
+    color: #ffffff !important;
+    padding: 10px 20px;
+    border-radius: 4px;
     text-decoration: none;
-    font-weight: 600;
+    font-size: 0.9em;
+    font-weight: 500;
     display: inline-block;
   }
 
-  @media (max-width: 900px) {
+  /* Mobile Responsiveness */
+  @media (max-width: 850px) {
     .portfolio-wrapper { flex-direction: column; height: auto; overflow: visible; }
-    .sidebar-fixed { width: 100%; height: auto; position: relative; }
-    .main-scrollable { padding: 40px 20px; }
+    .sidebar { width: 100%; height: auto; border-right: none; }
+    .sidebar-fixed-top { position: static; }
+    .main-content { padding: 40px 20px; }
   }
 </style>
 
 <div class="portfolio-wrapper">
 
-  <aside class="sidebar-fixed">
-    <div class="sidebar-top">
-      <h1 class="name-line">Brightone Onyango</h1>
+  <aside class="sidebar">
+    <div class="sidebar-fixed-top">
+      <h1 class="name-header">Brightone Onyango</h1>
       <div class="profile-circle">
         <img src="assets/profile-pic.png" alt="Brightone Onyango">
       </div>
       <p class="centered-title">Data Automation Specialist & Technical Writer</p>
-      <a href="https://github.com/georgixxx" class="btn-github" style="font-size: 0.8em;">GitHub Profile</a>
+      <a href="https://github.com/georgixxx" target="_blank" class="btn">GitHub Profile</a>
     </div>
 
-    <div class="sidebar-scrollable">
-      <div class="sidebar-section">
-        <h3>Education</h3>
-        <p style="font-size: 0.9em; margin-bottom: 15px;">
-          <strong>BSc. Computer Science</strong><br>
-          Chuka University
-        </p>
+    <div class="sidebar-scrollable-bottom">
+      <div style="margin-bottom: 30px;">
+        <h3 class="section-title">Education</h3>
+        <p style="font-size: 0.95em; margin: 0;"><strong>BSc. Computer Science</strong></p>
+        <p style="font-size: 0.9em; color: #475569;">Chuka University</p>
       </div>
 
-      <div class="sidebar-section">
-        <h3>Certifications</h3>
-        <ul style="font-size: 0.85em; padding-left: 15px; line-height: 1.8;">
+      <div style="margin-bottom: 30px;">
+        <h3 class="section-title">Certifications</h3>
+        <ul style="font-size: 0.9em; padding-left: 15px; line-height: 1.6; color: #334155;">
           <li>n8n Certified Professional</li>
           <li>Certified Data Annotator</li>
         </ul>
       </div>
 
-      <div class="sidebar-section">
-        <h3>Contact</h3>
-        <p style="font-size: 0.85em;">
-          <a href="mailto:georgebrixomuga@gmail.com" style="color: #004a99; text-decoration: none;">Email Me</a><br>
-          <a href="https://www.linkedin.com/in/brightone-onyango-109614263" style="color: #004a99; text-decoration: none;">LinkedIn</a>
+      <div>
+        <h3 class="section-title">Contact</h3>
+        <p style="font-size: 0.9em;">
+          <a href="mailto:georgebrixomuga@gmail.com" style="color: #004a99; text-decoration: none; font-weight: 600;">Email Me</a><br>
+          <a href="https://www.linkedin.com/in/brightone-onyango-109614263" target="_blank" style="color: #004a99; text-decoration: none; font-weight: 600;">LinkedIn Profile</a>
         </p>
       </div>
     </div>
   </aside>
 
-  <main class="main-scrollable">
-    <h1 style="font-family: 'Playfair Display', serif; font-size: 2.8em; color: #002b5c; margin-bottom: 20px;">Technical Portfolio</h1>
+  <main class="main-content">
+    <h1 class="portfolio-title">Technical Portfolio</h1>
     
-    <p style="font-size: 1.15em; line-height: 1.8; color: #556070; margin-bottom: 50px; max-width: 800px;">
-        I engineering production-ready data integrity layers to bridge the gap between raw data ingestion and analytical reliability. My work focuses on <strong>"Gatekeeper" pipelines</strong>—automated systems that ensure high-fidelity data streams through strict validation and workflow orchestration.
+    <p style="font-size: 1.1em; line-height: 1.8; color: #475569; margin-bottom: 40px;">
+        I engineering production ready data integrity layers to bridge the gap between raw data ingestion and analytical reliability. My work focuses on building gatekeeper pipelines that ensure high fidelity data streams through strict validation and automated workflow orchestration.
     </p>
 
-    <h2 style="color: #004a99; border-bottom: 1px solid #dde3ec; padding-bottom: 10px; margin-bottom: 30px;">Featured Projects</h2>
+    <h2 style="color: #004a99; margin-bottom: 25px;">Featured Projects</h2>
 
     <div class="project-card">
-      <h3 style="font-size: 1.6em; color: #002b5c; margin-bottom: 5px;">1. Automated Data Validation Pipeline</h3>
-      <p style="font-family: 'IBM Plex Mono', monospace; color: #004a99; font-size: 0.9em; margin-bottom: 20px;">n8n • Python • JSON Schema</p>
+      <h3 style="font-size: 1.4em; color: #002b5c; margin-bottom: 5px;">1. Automated Data Validation Pipeline</h3>
+      <p class="tech-stack">n8n • Python • JSON Schema</p>
       
-      <p style="line-height: 1.7; margin-bottom: 20px;">
-          This project implements a robust integrity layer for automated data workflows. It intercepts incoming JSON payloads via Webhooks and utilizes <strong>JSON Schema Draft 07</strong> alongside custom <strong>Python validation logic</strong> to verify data structure and content accuracy before storage.
+      <p style="line-height: 1.7; color: #334155;">
+          This implementation creates a robust integrity layer for automated workflows. It intercepts incoming JSON payloads via Webhooks and validates them against a strict JSON Schema before routing. This prevents database corruption and ensures downstream analytical tools receive only high quality data.
       </p>
 
-      <a href="assets/architecture diagram.png" target="_blank" class="arch-link" title="Click to view full size">
-        <img src="assets/architecture diagram.png" alt="System Architecture Diagram" style="width: 100%; border-radius: 5px; border: 1px solid #dde3ec;">
+      <a href="assets/architecture diagram.png" target="_blank">
+        <img src="assets/architecture diagram.png" alt="System Architecture Diagram" class="arch-diagram">
       </a>
-      <p style="font-size: 0.85em; font-style: italic; color: #999; text-align: center;">Figure 1: High-level system architecture — from ingestion to routing.</p>
+      <p style="font-size: 0.8em; font-style: italic; color: #64748b; text-align: center;">Figure 1: System architecture showing ingestion to final routing.</p>
 
-      <h4 style="margin-top: 30px; color: #002b5c;">Technical Impact:</h4>
-      <ul style="line-height: 1.8; margin-bottom: 25px;">
-        <li><strong>Data Integrity:</strong> Prevents "silent failures" by rejecting non-compliant payloads.</li>
-        <li><strong>Orchestration:</strong> Uses n8n for flexible routing of valid vs. invalid data.</li>
-        <li><strong>Auditability:</strong> Generates real-time error logs and alerts for immediate troubleshooting.</li>
+      <h4 style="color: #002b5c; margin-top: 25px;">Key Deliverables</h4>
+      <ul style="line-height: 1.8; color: #334155; font-size: 0.95em;">
+        <li>Eliminated manual data cleaning by enforcing schema compliance at the entry point.</li>
+        <li>Established a transparent audit trail for every rejected payload.</li>
+        <li>Implemented real-time error reporting to reduce response time for data source issues.</li>
       </ul>
 
-      <a href="https://github.com/georgixxx/n8n-json-validation-pipeline" class="btn-github">View Project on GitHub</a>
+      <div style="margin-top: 25px;">
+        <a href="https://github.com/georgixxx/n8n-json-validation-pipeline" target="_blank" class="btn">Source Code</a>
+      </div>
     </div>
 
     <div class="project-card">
-      <h3 style="font-size: 1.6em; color: #002b5c; margin-bottom: 5px;">2. Python Data Analysis Dashboard</h3>
-      <p style="font-family: 'IBM Plex Mono', monospace; color: #004a99; font-size: 0.9em; margin-bottom: 20px;">Python • Pandas • Matplotlib • SQL</p>
+      <h3 style="font-size: 1.4em; color: #002b5c; margin-bottom: 5px;">2. Python Data Analysis Dashboard</h3>
+      <p class="tech-stack">Python • Pandas • Matplotlib • SQL</p>
       
-      <p style="line-height: 1.7; margin-bottom: 20px;">
-          Building on the validated data streams from Project 1, this upcoming dashboard focuses on <strong>automated KPI reporting</strong>. It utilizes Pandas to transform raw logs into actionable business insights, identifying trends and data quality patterns over time.
+      <p style="line-height: 1.7; color: #334155;">
+          Following the data validation phase, this project focuses on transforming raw, validated logs into actionable business insights. Using Pandas and Matplotlib, the system generates automated KPI dashboards that track growth trends and data quality metrics over time.
       </p>
 
-      <div style="background: #f0f4f8; padding: 20px; border-radius: 5px; border: 1px dashed #004a99; text-align: center;">
-        <p style="font-style: italic; color: #004a99; margin: 0;">Currently in development — Stay tuned for the GitHub release.</p>
+      <div style="background: #f1f5f9; padding: 15px; border-radius: 4px; border-left: 4px solid #64748b; margin-top: 20px;">
+        <p style="margin: 0; font-size: 0.9em; font-style: italic; color: #475569;">This project is currently in the final development stage. GitHub release is expected shortly.</p>
       </div>
     </div>
 
