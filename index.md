@@ -2,7 +2,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Brightone Onyango — Technical Portfolio</title>
+  <title>Brightone Onyango - Technical Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -30,7 +30,7 @@
       min-height: 100vh;
     }
 
-    /* ── LEFT SIDEBAR ── */
+    /* LEFT SIDEBAR */
     .sidebar {
       background: var(--light);
       border-right: 1px solid var(--border);
@@ -83,6 +83,7 @@
       color: var(--muted);
       margin-bottom: 28px;
       line-height: 1.5;
+      text-align: center;
     }
 
     .sidebar-section { margin-bottom: 26px; }
@@ -117,7 +118,7 @@
 
     .sidebar-section a:hover { text-decoration: underline; }
 
-    /* ── RIGHT MAIN ── */
+    /* RIGHT MAIN */
     .main { padding: 48px 56px; max-width: 860px; }
 
     .main h1 {
@@ -308,7 +309,7 @@
 
 <div class="layout">
 
-  <!-- ════ LEFT COLUMN ════ -->
+  <!-- LEFT COLUMN -->
   <aside class="sidebar">
 
     <h1>Brightone Onyango</h1>
@@ -345,31 +346,31 @@
 
   </aside>
 
-  <!-- ════ RIGHT COLUMN ════ -->
+  <!-- RIGHT COLUMN -->
   <main class="main">
 
     <h1>Technical Portfolio</h1>
 
     <div class="intro-block">
       <p class="intro">
-        Welcome — and thank you for stopping by! I'm glad you're here.
+        Welcome, and thank you for stopping by! I'm glad you're here.
       </p>
       <p class="intro">
         I specialise in engineering high-integrity data pipelines that make automated workflows
         more reliable, auditable, and production-ready. My work sits at the intersection of
-        data automation and technical communication — meaning I don't just build systems,
-        I document them clearly so that anyone on your team can understand, maintain, and extend them.
+        data automation and technical communication. I don't just build systems; I document
+        them clearly so that anyone on your team can understand, maintain, and extend them.
       </p>
       <p class="intro">
         Every project in this portfolio is open source, built from real-world use cases, and
         designed with a firm focus on <strong>Accuracy, Clarity, and Traceability</strong>.
         Whether it's validating incoming data before it ever touches a database, or structuring
-        workflows that fail gracefully and log every error — the goal is always the same:
+        workflows that fail gracefully and log every error, the goal is always the same:
         systems you can trust.
       </p>
       <p class="intro">
-        If you find any of these projects useful — whether for your own workflows, a team
-        implementation, or simply as a learning reference — I'd love to hear from you.
+        If you find any of these projects useful, whether for your own workflows, a team
+        implementation, or simply as a learning reference, I'd love to hear from you.
         Feel free to reach out via
         <a href="mailto:georgebrixomuga@gmail.com">email</a>
         or connect with me on
@@ -396,7 +397,7 @@
           onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'arch-placeholder\'>[ architecture diagram.png ]<br><small>Place image in assets/ folder</small></div>'"
         />
       </div>
-      <p class="diagram-caption">Figure 1: High-level system architecture — from ingestion to final routing.</p>
+      <p class="diagram-caption">Figure 1: High-level system architecture, from ingestion to final routing.</p>
 
       <p class="impact-title">Business Impact</p>
       <ul class="impact-list">
