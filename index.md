@@ -1,130 +1,158 @@
 <style>
-  .custom-layout {
+  /* Container to create the two-column look */
+  .portfolio-container {
     display: flex;
-    gap: 40px;
+    gap: 50px;
     align-items: flex-start;
     font-family: 'IBM Plex Sans', sans-serif;
-    color: #1a1a2e;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 40px auto;
+    padding: 0 20px;
   }
 
-  .custom-sidebar {
+  /* LEFT SIDEBAR */
+  .sidebar {
     flex: 0 0 300px;
     position: sticky;
     top: 20px;
     background-color: #f5f7fa;
-    padding: 25px;
+    padding: 30px;
     border-radius: 12px;
-    border-top: 5px solid #004a99;
-    height: fit-content;
+    border-top: 6px solid #004a99;
+    text-align: left;
   }
 
-  .sidebar-name {
+  .name-header {
     font-family: 'Playfair Display', serif;
+    font-size: 1.8em;
     color: #002b5c;
-    font-size: 1.6em;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    margin-top: 0;
   }
 
-  .profile-circle {
-    width: 180px;
-    height: 180px;
+  .profile-image {
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
-    overflow: hidden;
     border: 3px solid #004a99;
-    margin-bottom: 15px;
-  }
-
-  .profile-circle img {
-    width: 100%;
-    height: 100%;
     object-fit: cover;
+    margin-bottom: 20px;
   }
 
-  .sidebar-title {
-    font-weight: bold;
+  .role-title {
+    font-weight: 700;
     color: #004a99;
-    font-size: 1em;
-    margin-bottom: 15px;
-  }
-
-  .github-link {
-    display: inline-block;
-    background: #24292e;
-    color: white !important;
-    padding: 10px 15px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 0.85em;
+    font-size: 1.1em;
+    line-height: 1.4;
     margin-bottom: 25px;
   }
 
-  .main-content {
+  .sidebar-section {
+    margin-bottom: 25px;
+    border-top: 1px solid #dde3ec;
+    padding-top: 15px;
+  }
+
+  .sidebar-section h3 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #556070;
+    margin-bottom: 10px;
+  }
+
+  /* RIGHT MAIN CONTENT */
+  .content-area {
     flex: 1;
     min-width: 0;
   }
 
-  .project-card {
-    background: white;
-    padding: 25px;
+  .project-box {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
     border-left: 5px solid #004a99;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    margin-bottom: 40px;
   }
 
-  @media (max-width: 768px) {
-    .custom-layout { flex-direction: column; }
-    .custom-sidebar { flex: 1 1 auto; position: relative; width: 100%; }
+  .enlarge-img {
+    width: 100%;
+    border-radius: 5px;
+    cursor: zoom-in;
+    transition: transform 0.2s;
+  }
+
+  .enlarge-img:hover {
+    transform: scale(1.01);
+  }
+
+  @media (max-width: 850px) {
+    .portfolio-container { flex-direction: column; }
+    .sidebar { width: 100%; position: relative; }
   }
 </style>
 
-<div class="custom-layout">
+<div class="portfolio-container">
 
-  <aside class="custom-sidebar">
-    <h2 class="sidebar-name">Brightone Onyango</h2>
-    
-    <div class="profile-circle">
-      <img src="assets/profile-pic.png" alt="Brightone Onyango">
+  <aside class="sidebar">
+    <h1 class="name-header">Brightone Onyango</h1>
+
+    <img src="assets/profile-pic.png" alt="Brightone Onyango" class="profile-image">
+
+    <p class="role-title">Data Automation Specialist & Technical Writer</p>
+
+    <div class="sidebar-section">
+      <h3>Education</h3>
+      <p style="font-size: 0.95em;">
+        <strong>BSc. Computer Science</strong><br>
+        Chuka University
+      </p>
     </div>
 
-    <p class="sidebar-title">Data Automation Specialist & Technical Writer</p>
-    
-    <a href="https://github.com/georgixxx" class="github-link">View My GitHub Profile</a>
-
-    <div style="margin-top: 20px; border-top: 1px solid #dde3ec; padding-top: 15px;">
-      <h3 style="font-size: 0.8em; text-transform: uppercase; color: #004a99;">Education</h3>
-      <p style="font-size: 0.9em;"><strong>BSc. Computer Science</strong><br>Chuka University</p>
-    </div>
-
-    <div style="margin-top: 15px;">
-      <h3 style="font-size: 0.8em; text-transform: uppercase; color: #004a99;">Certifications</h3>
-      <ul style="font-size: 0.9em; padding-left: 15px;">
+    <div class="sidebar-section">
+      <h3>Certifications</h3>
+      <ul style="font-size: 0.9em; padding-left: 18px; line-height: 1.6;">
         <li>n8n Certified Professional</li>
         <li>Certified Data Annotator</li>
       </ul>
     </div>
+
+    <div class="sidebar-section">
+      <h3>Connect</h3>
+      <a href="https://github.com/georgixxx" style="display:block; margin-bottom:10px; color:#004a99; font-weight:600; text-decoration:none;">View GitHub Profile</a>
+      <a href="mailto:georgebrixomuga@gmail.com" style="display:block; color:#004a99; font-weight:600; text-decoration:none;">Email Me</a>
+    </div>
   </aside>
 
-  <main class="main-content">
-    <h1 style="font-family: 'Playfair Display', serif; color: #002b5c; border-bottom: 1px solid #dde3ec; padding-bottom: 10px;">Technical Portfolio</h1>
+  <main class="content-area">
+    <h2 style="font-family: 'Playfair Display', serif; font-size: 2.4em; color: #002b5c; margin-top: 0;">Technical Portfolio</h2>
     
-    <p style="margin: 20px 0; line-height: 1.6; color: #556070;">
-      I bridge the gap between raw data ingestion and analytical reliability. I specialize in building <strong>"Gatekeeper" pipelines</strong> that ensure data integrity.
+    <p style="font-size: 1.1em; line-height: 1.7; color: #556070; margin-bottom: 35px;">
+      I engineer production-ready data integrity layers. I specialize in <strong>"Gatekeeper" pipelines</strong> that intercept, validate, and route data using workflow orchestration.
     </p>
 
-    <div class="project-card">
-      <h3 style="color: #002b5c;">1. Automated Data Validation Pipeline</h3>
-      <p style="font-family: monospace; color: #004a99; font-size: 0.85em;">n8n • Python • JSON Schema</p>
+    <div class="project-box">
+      <h3 style="color: #002b5c; margin-bottom: 10px;">1. Automated Data Validation Pipeline</h3>
+      <p style="font-family: 'IBM Plex Mono', monospace; font-size: 0.85em; color: #004a99; margin-bottom: 20px;">
+        STACK: n8n | Python | JSON Schema
+      </p>
       
       <a href="assets/architecture diagram.png" target="_blank">
-        <img src="assets/architecture diagram.png" alt="Architecture Diagram" style="width: 100%; margin-top: 15px; border-radius: 8px;">
+        <img src="assets/architecture diagram.png" alt="Architecture Diagram" class="enlarge-img">
       </a>
-      <p style="font-size: 0.8em; font-style: italic; text-align: center; margin-top: 5px;">Figure 1: Click to enlarge diagram.</p>
-
-      <p style="margin-top: 15px; font-size: 0.95em; line-height: 1.6;">
-        Developed a production-ready integrity layer to intercept payloads via Webhooks, ensuring 100% schema compliance before storage.
+      <p style="font-size: 0.8em; font-style: italic; color: #999; text-align: center; margin-top: 10px;">
+        Figure 1: High-level system architecture (Click to enlarge).
       </p>
+
+      <p style="line-height: 1.7; color: #333; margin-top: 20px;">
+        This pipeline ensures 100% data integrity for automated workflows by intercepting JSON payloads and validating them against strict schemas before they reach the database.
+      </p>
+
+      <div style="margin-top: 20px;">
+        <a href="https://github.com/georgixxx/n8n-json-validation-pipeline" style="background:#004a99; color:white; padding:10px 20px; border-radius:4px; text-decoration:none; font-weight:600;">GitHub Repository</a>
+      </div>
     </div>
   </main>
 
