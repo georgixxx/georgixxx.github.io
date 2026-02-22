@@ -24,9 +24,10 @@
       min-height: 100vh;
     }
 
+    /* Sidebar enlarged by 1in (96px): 300 + 96 = 396px */
     .layout {
       display: grid;
-      grid-template-columns: 300px 1fr;
+      grid-template-columns: 396px 1fr;
       min-height: 100vh;
     }
 
@@ -34,7 +35,7 @@
     .sidebar {
       background: var(--light);
       border-right: 1px solid var(--border);
-      padding: 48px 28px;
+      padding: 48px 36px;
       position: sticky;
       top: 0;
       height: 100vh;
@@ -43,19 +44,20 @@
 
     .sidebar h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 1.5em;
+      font-size: 1.6em;
       color: var(--blue);
-      margin-bottom: 22px;
+      margin-bottom: 24px;
       line-height: 1.25;
     }
 
+    /* Profile image enlarged proportionally: 160 + 96 = 256px */
     .profile-img {
-      width: 160px;
-      height: 160px;
+      width: 256px;
+      height: 256px;
       border-radius: 50%;
       overflow: hidden;
       border: 3px solid var(--blue);
-      margin-bottom: 22px;
+      margin-bottom: 24px;
       background: #dce8f5;
       display: flex;
       align-items: center;
@@ -79,7 +81,7 @@
     }
 
     .sidebar-role {
-      font-size: 0.9em;
+      font-size: 0.95em;
       color: var(--muted);
       margin-bottom: 28px;
       line-height: 1.5;
@@ -99,17 +101,17 @@
       margin-bottom: 10px;
     }
 
-    .sidebar-section p { font-size: 0.9em; line-height: 1.6; }
+    .sidebar-section p { font-size: 0.92em; line-height: 1.6; }
 
     .sidebar-section ul {
       padding-left: 16px;
-      font-size: 0.9em;
+      font-size: 0.92em;
       line-height: 1.8;
     }
 
     .sidebar-section a {
       display: block;
-      font-size: 0.9em;
+      font-size: 0.92em;
       color: var(--blue);
       text-decoration: none;
       line-height: 2;
@@ -118,7 +120,7 @@
 
     .sidebar-section a:hover { text-decoration: underline; }
 
-    /* RIGHT MAIN */
+    /* RIGHT MAIN — padding reduced by 1in on left to compensate */
     .main { padding: 48px 1in; }
 
     .main h1 {
@@ -380,9 +382,10 @@
       line-height: 1.5;
     }
 
-    @media (max-width: 760px) {
+    @media (max-width: 860px) {
       .layout { grid-template-columns: 1fr; }
       .sidebar { position: static; height: auto; }
+      .profile-img { width: 180px; height: 180px; }
       .main { padding: 32px 20px; }
       .method-grid { grid-template-columns: 1fr; }
     }
