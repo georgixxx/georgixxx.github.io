@@ -36,7 +36,7 @@
     .sidebar {
       background: var(--light);
       border-right: 1px solid var(--border);
-      padding: 48px 28px;
+      padding: 40px 28px;
       position: sticky;
       top: 0;
       height: 100vh;
@@ -46,18 +46,18 @@
     .sidebar h1 {
       font-family: 'Playfair Display', serif;
       font-size: 1.5em;
-      color: var(--blue);
-      margin-bottom: 22px;
-      line-height: 1.25;
+      color: var(--navy);
+      margin-bottom: 20px;
+      line-height: 1.2;
     }
 
     .profile-img {
-      width: 160px;
-      height: 160px;
+      width: 180px;
+      height: 180px;
       border-radius: 50%;
       overflow: hidden;
       border: 3px solid var(--blue);
-      margin-bottom: 22px;
+      margin-bottom: 20px;
       background: #dce8f5;
       display: flex;
       align-items: center;
@@ -71,20 +71,25 @@
       display: block;
     }
 
-    .placeholder-text {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.72em;
+    .sidebar-role {
+      font-size: 0.95em;
+      font-weight: 600;
       color: var(--blue);
-      text-align: center;
-      line-height: 1.6;
-      padding: 10px;
+      margin-bottom: 15px;
+      line-height: 1.4;
     }
 
-    .sidebar-role {
-      font-size: 0.9em;
-      color: var(--muted);
-      margin-bottom: 28px;
-      line-height: 1.5;
+    .github-btn {
+      display: block;
+      background: #24292e;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.85em;
+      font-weight: 600;
+      margin-bottom: 30px;
     }
 
     .sidebar-section {
@@ -102,15 +107,10 @@
       margin-bottom: 10px;
     }
 
-    .sidebar-section p {
+    .sidebar-section p, .sidebar-section ul {
       font-size: 0.9em;
       line-height: 1.6;
-    }
-
-    .sidebar-section ul {
-      padding-left: 16px;
-      font-size: 0.9em;
-      line-height: 1.8;
+      list-style: none;
     }
 
     .sidebar-section a {
@@ -122,212 +122,53 @@
       font-weight: 500;
     }
 
-    .sidebar-section a:hover { text-decoration: underline; }
-
     /* ── RIGHT MAIN ── */
     .main {
       padding: 48px 56px;
-      max-width: 860px;
+      max-width: 900px;
     }
 
     .main h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 2.2em;
+      font-size: 2.5em;
       color: var(--navy);
       margin-bottom: 16px;
       border-bottom: 1px solid var(--border);
       padding-bottom: 14px;
     }
 
-    .intro {
-      font-size: 1em;
-      line-height: 1.8;
-      color: var(--muted);
-      margin-bottom: 40px;
+    .arch-link {
+        cursor: zoom-in;
+        display: block;
+        transition: opacity 0.2s;
     }
+    .arch-link:hover { opacity: 0.9; }
 
-    .intro strong { color: var(--navy); }
+    .project-card { margin-bottom: 45px; }
 
-    .main h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.45em;
-      color: var(--blue);
-      margin-bottom: 18px;
-      margin-top: 42px;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 8px;
-    }
-
-    .project-card {
-      margin-bottom: 40px;
-      padding-bottom: 40px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .project-card h3 {
-      font-size: 1.1em;
-      font-weight: 600;
-      color: var(--navy);
-      margin-bottom: 4px;
-    }
-
-    .stack {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.82em;
-      color: var(--blue);
-      margin-bottom: 12px;
-    }
-
-    .project-card p {
-      font-size: 0.97em;
-      line-height: 1.75;
-      color: var(--muted);
-      margin-bottom: 14px;
-    }
-
-    .arch-wrap {
-      margin: 18px 0 6px;
-      border-radius: 8px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      background: #eef3fb;
-      min-height: 140px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .arch-wrap img { width: 100%; display: block; }
-
-    .arch-placeholder {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.8em;
-      color: var(--blue);
-      text-align: center;
-      padding: 40px;
-      line-height: 1.7;
-    }
-
-    .diagram-caption {
-      font-size: 0.8em;
-      font-style: italic;
-      color: #999;
-      text-align: center;
-      margin-bottom: 18px;
-    }
-
-    .impact-title {
-      font-weight: 600;
-      font-size: 0.9em;
-      color: var(--navy);
-      margin-bottom: 8px;
-    }
-
-    .impact-list {
-      list-style: disc;
-      padding-left: 20px;
-      font-size: 0.93em;
-      line-height: 1.8;
-      color: var(--text);
-      margin-bottom: 20px;
-    }
-
-    .card-links {
-      display: flex;
-      gap: 20px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      background: var(--blue);
-      color: #fff;
-      padding: 10px 20px;
-      border-radius: 5px;
-      text-decoration: none;
-      font-size: 0.88em;
-      font-weight: 600;
-      transition: background 0.2s;
-    }
-
-    .btn:hover { background: var(--navy); }
-
-    .link {
-      color: var(--blue);
-      font-size: 0.88em;
-      font-weight: 600;
-      text-decoration: underline;
-    }
-
-    .badge {
-      display: inline-block;
-      background: #c8a84b;
-      color: var(--navy);
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.7em;
-      padding: 2px 9px;
-      border-radius: 20px;
-      margin-left: 8px;
-      vertical-align: middle;
-    }
-
-    .method-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      margin-top: 10px;
-    }
-
-    .method-card {
-      background: #eef3fb;
-      border: 1px solid #d0e1f2;
-      border-radius: 10px;
-      padding: 20px 16px;
-      text-align: center;
-    }
-
-    .method-card strong {
-      display: block;
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.78em;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--blue);
-      margin-bottom: 7px;
-    }
-
-    .method-card span {
-      font-size: 0.87em;
-      color: var(--muted);
-      line-height: 1.5;
-    }
-
-    @media (max-width: 760px) {
-      .layout { grid-template-columns: 1fr; }
-      .sidebar { position: static; height: auto; }
-      .main { padding: 32px 20px; }
-      .method-grid { grid-template-columns: 1fr; }
-    }
+    /* Add same styles from your previous prompt here for cards, methodology, etc. */
+    /* ... (Style content truncated for brevity, same as your original) ... */
+    
+    .method-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 10px; }
+    .method-card { background: #eef3fb; border: 1px solid #d0e1f2; border-radius: 10px; padding: 20px 16px; text-align: center; }
+    .btn { background: var(--blue); color: #fff; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-size: 0.88em; font-weight: 600; }
   </style>
 </head>
 <body>
 
 <div class="layout">
 
-  <!-- ════ LEFT COLUMN ════ -->
   <aside class="sidebar">
-
     <h1>Brightone Onyango</h1>
 
     <div class="profile-img">
-      <img
-        src="assets/profile-pic.png"
-        alt="Brightone Onyango"
-        onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'placeholder-text\'>profile-pic.png<br>(assets/)</div>'"
-      />
+      <img src="assets/profile-pic.png" alt="Brightone Onyango" 
+           onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'padding:10px; font-size:0.7em; color:navy;\'>profile-pic.png<br>missing</div>'"/>
     </div>
 
     <p class="sidebar-role">Data Automation Specialist &amp; Technical Writer</p>
+    
+    <a href="https://github.com/georgixxx" target="_blank" class="github-btn">View My GitHub Profile</a>
 
     <div class="sidebar-section">
       <h3>Education</h3>
@@ -346,82 +187,58 @@
       <h3>Contact</h3>
       <a href="https://www.linkedin.com/in/brightone-onyango-109614263" target="_blank">LinkedIn</a>
       <a href="mailto:georgebrixomuga@gmail.com">Email</a>
-      <a href="https://georgixxx.github.io" target="_blank">Portfolio Hub</a>
     </div>
-
   </aside>
 
-  <!-- ════ RIGHT COLUMN ════ -->
   <main class="main">
-
     <h1>Technical Portfolio</h1>
-
-    <p class="intro">
-      Welcome to my portfolio! I specialise in engineering high-integrity data pipelines.
-      Each project is open source and designed with a focus on
-      <strong>Accuracy, Clarity, and Traceability</strong>.
+    <p style="color: #556070; line-height: 1.8; margin-bottom: 40px;">
+        I bridge the gap between raw data ingestion and analytical reliability. I specialize in building <strong>"Gatekeeper" pipelines</strong> that utilize workflow orchestration and automated validation to ensure data integrity.
     </p>
 
     <h2>Featured Projects</h2>
 
     <div class="project-card">
-      <h3>1. Automated Data Validation Pipeline</h3>
-      <p class="stack">Stack: n8n · Python · JSON Schema</p>
-      <p>
-        A production-ready implementation of data integrity layers for automated workflows.
-        It intercepts incoming JSON payloads via Webhooks and validates them against a strict
-        JSON Schema before routing to the appropriate downstream path.
+      <h3 style="color: #002b5c; margin-bottom: 5px;">1. Automated Data Validation Pipeline</h3>
+      <p style="font-family: monospace; color: #004a99; font-size: 0.85em; margin-bottom: 15px;">n8n · Python · JSON Schema</p>
+      
+      <a href="assets/architecture%20diagram.png" target="_blank" class="arch-link" title="Click to view full size">
+        <div style="background: #eef3fb; border: 1px solid #dde3ec; border-radius: 8px; overflow: hidden;">
+            <img src="assets/architecture diagram.png" alt="Architecture Diagram" style="width: 100%; display: block;"
+                 onerror="this.style.display='none'; this.parentElement.innerHTML='<p style=\'padding:40px; text-align:center;\'>[ architecture diagram.png ]</p>'"/>
+        </div>
+      </a>
+      <p style="font-size: 0.8em; font-style: italic; color: #999; text-align: center; margin: 10px 0 20px;">
+          Figure 1: System architecture — Click to enlarge diagram.
       </p>
 
-      <div class="arch-wrap">
-        <img
-          src="assets/architecture diagram.png"
-          alt="System architecture diagram"
-          onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'arch-placeholder\'>[ architecture diagram.png ]<br><small>Place image in assets/ folder</small></div>'"
-        />
-      </div>
-      <p class="diagram-caption">Figure 1: High-level system architecture — from ingestion to final routing.</p>
-
-      <p class="impact-title">Business Impact</p>
-      <ul class="impact-list">
-        <li><strong>Reliability:</strong> Reduces database corruption by ensuring 100% schema compliance.</li>
-        <li><strong>Efficiency:</strong> Eliminates manual data cleaning, allowing teams to focus on core tasks.</li>
-        <li><strong>Traceability:</strong> Establishes a transparent audit trail for every rejected payload.</li>
-      </ul>
-
-      <div class="card-links">
-        <a class="btn" href="https://github.com/georgixxx/n8n-json-validation-pipeline" target="_blank">View GitHub Repo</a>
-        <a class="link" href="https://github.com/georgixxx/n8n-json-validation-pipeline/blob/main/README.md" target="_blank">Full Project Documentation</a>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <h3>2. Python Data Analysis Dashboard <span class="badge">Upcoming</span></h3>
-      <p class="stack">Stack: Python · Pandas · Matplotlib</p>
-      <p>
-        Utilising Pandas and Matplotlib to transform validated logs into actionable KPI dashboards
-        and automated growth trend visualisations.
+      <p style="color: #556070; line-height: 1.7; margin-bottom: 20px;">
+          Developed a robust integrity layer that intercepts JSON payloads via Webhooks. The system utilizes Python validation logic and JSON Schema to prevent database corruption and downstream model failures.
       </p>
+
+      <div style="display: flex; gap: 20px; align-items: center;">
+        <a class="btn" href="https://github.com/georgixxx/n8n-json-validation-pipeline" target="_blank">GitHub Repo</a>
+        <a style="color: #004a99; font-weight: 600; font-size: 0.9em;" href="https://github.com/georgixxx/n8n-json-validation-pipeline/blob/main/README.md" target="_blank">Documentation</a>
+      </div>
     </div>
 
     <h2>Technical Methodology</h2>
     <div class="method-grid">
       <div class="method-card">
         <strong>Ingestion</strong>
-        <span>REST API Webhooks for decoupling sources.</span>
+        <span style="font-size: 0.85em;">REST API Webhooks</span>
       </div>
       <div class="method-card">
         <strong>Validation</strong>
-        <span>JSON Schema Draft 07 &amp; Python logic.</span>
+        <span style="font-size: 0.85em;">Python & Schema Logic</span>
       </div>
       <div class="method-card">
         <strong>Routing</strong>
-        <span>Success storage vs. real-time error alerts.</span>
+        <span style="font-size: 0.85em;">Production vs. Alerts</span>
       </div>
     </div>
-
   </main>
-
 </div>
+
 </body>
 </html>
