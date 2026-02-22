@@ -1,6 +1,3 @@
----
-layout: null
----
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -122,7 +119,7 @@ layout: null
     .sidebar-section a:hover { text-decoration: underline; }
 
     /* RIGHT MAIN */
-    .main { padding: 48px 56px; max-width: 860px; }
+    .main { padding: 48px 1in; max-width: 860px; }
 
     .main h1 {
       font-family: 'Playfair Display', serif;
@@ -435,7 +432,7 @@ layout: null
     <div class="sidebar-section">
       <h3>Contact</h3>
       <a href="https://www.linkedin.com/in/brightone-onyango-109614263" target="_blank">LinkedIn</a>
-      <a href="mailto:georgebrixomuga@gmail.com">Email</a>
+      <a href="/cdn-cgi/l/email-protection#bcdbd9d3cedbd9deced5c4d3d1c9dbddfcdbd1ddd5d092dfd3d1">Email</a>
       <a href="https://georgixxx.github.io" target="_blank">Portfolio Hub</a>
     </div>
 
@@ -467,7 +464,7 @@ layout: null
         If you find any of these projects useful, whether for your own workflows, a team
         implementation, or simply as a learning reference, I'd love to hear from you.
         Feel free to reach out via
-        <a href="mailto:georgebrixomuga@gmail.com">email</a>
+        <a href="/cdn-cgi/l/email-protection#4d2a28223f2a282f3f24352220382a2c0d2a202c2421632e2220">email</a>
         or connect with me on
         <a href="https://www.linkedin.com/in/brightone-onyango-109614263" target="_blank">LinkedIn</a>.
         I'm always open to collaboration, feedback, or just a good conversation about data.
@@ -538,7 +535,7 @@ layout: null
 
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   const lightbox     = document.getElementById('lightbox');
   const lightboxImg  = document.getElementById('lightboxImg');
   const lightboxClose= document.getElementById('lightboxClose');
@@ -590,12 +587,4 @@ layout: null
     const img = document.getElementById('archThumb');
     if (!img) return;
     let current = parseFloat(img.dataset.scale || 1);
-    const delta = e.deltaY > 0 ? -0.1 : 0.1;
-    current = Math.min(3, Math.max(0.5, current + delta));
-    img.dataset.scale = current;
-    img.style.transform = `scale(${current})`;
-  }, { passive: false });
-</script>
-
-</body>
-</html>
+    const delta = e.deltaY > 0 ?
