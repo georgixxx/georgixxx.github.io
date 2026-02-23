@@ -680,10 +680,10 @@
 
       <div class="arch-wrap" id="archWrap2">
         <img
-          src="output/vulnerability_trend_kenya.png"
+          src="assets/vulnerability_trend_kenya.png"
           alt="Vulnerability trend chart"
           id="archThumb2"
-          onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'arch-placeholder\'>[ vulnerability_trend_kenya.png ]<br><small>Place image in output/ folder</small></div>'"
+          onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'arch-placeholder\'>[ vulnerability_trend_kenya.png ]<br><small>Place image in assets/ folder</small></div>'"
         />
       </div>
       <p class="diagram-caption">Figure 1: Vulnerability trend from 2000 to 2022 against the 45% NGO intervention threshold.</p>
@@ -789,7 +789,7 @@
 
   archWrap2.addEventListener('click', () => {
     scale = 1;
-    lightboxImg.src = 'output/vulnerability_trend_kenya.png';
+    lightboxImg.src = 'assets/vulnerability_trend_kenya.png';
     lightboxImg.style.transform = 'scale(1)';
     lightbox.classList.add('active');
   });
